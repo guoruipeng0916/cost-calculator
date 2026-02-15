@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>费用计算器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>费用计算</h1>
+
+    <!-- 导 行（原有） -->
+    <div class="input-row">
+        <label class="label" for="guide-input">导：</label>
+        <input type="text" id="guide-input" class="formula-input" placeholder="点击下方按键输入公式" readonly>
+        <span class="result-text" id="guide-result">结果：0</span>
+    </div>
+
+    <!-- 车 行（原有） -->
+    <div class="input-row">
+        <label class="label" for="car-input">车：</label>
+        <input type="text" id="car-input" class="formula-input" placeholder="点击下方按键输入公式" readonly>
+        <span class="result-text" id="car-result">结果：0</span>
+    </div>
+
+    <!-- 门票 行（原有） -->
+    <div class="input-row">
+        <label class="label" for="ticket-input">门票：</label>
+        <input type="text" id="ticket-input" class="formula-input" placeholder="点击下方按键输入公式" readonly>
+        <span class="result-text" id="ticket-result">结果：0</span>
+    </div>
+
+    <!-- 新增：接机 行 -->
+    <div class="input-row">
+        <label class="label" for="pickup-input">接机：</label>
+        <input type="text" id="pickup-input" class="formula-input" placeholder="点击下方按键输入公式" readonly>
+        <span class="result-text" id="pickup-result">结果：0</span>
+    </div>
+
+    <!-- 新增：酒店 行 -->
+    <div class="input-row">
+        <label class="label" for="hotel-input">酒店：</label>
+        <input type="text" id="hotel-input" class="formula-input" placeholder="点击下方按键输入公式" readonly>
+        <span class="result-text" id="hotel-result">结果：0</span>
+    </div>
+
+    <!-- 新增：餐 行 -->
+    <div class="input-row">
+        <label class="label" for="meal-input">餐：</label>
+        <input type="text" id="meal-input" class="formula-input" placeholder="点击下方按键输入公式" readonly>
+        <span class="result-text" id="meal-result">结果：0</span>
+    </div>
+
+    <!-- 计算器按键区域（原有） -->
+    <div class="calc-keypad">
+        <div class="keypad-row">
+            <button class="key-btn num-key" data-key="(">(</button>
+            <button class="key-btn num-key" data-key=")">)</button>
+            <button class="key-btn func-key" id="backspace-key">←</button>
+            <button class="key-btn func-key" id="clear-key">清空</button>
+        </div>
+        <div class="keypad-row">
+            <button class="key-btn num-key" data-key="7">7</button>
+            <button class="key-btn num-key" data-key="8">8</button>
+            <button class="key-btn num-key" data-key="9">9</button>
+            <button class="key-btn op-key" data-key="*">×</button>
+        </div>
+        <div class="keypad-row">
+            <button class="key-btn num-key" data-key="4">4</button>
+            <button class="key-btn num-key" data-key="5">5</button>
+            <button class="key-btn num-key" data-key="6">6</button>
+            <button class="key-btn op-key" data-key="+">+</button>
+        </div>
+        <div class="keypad-row">
+            <button class="key-btn num-key" data-key="1">1</button>
+            <button class="key-btn num-key" data-key="2">2</button>
+            <button class="key-btn num-key" data-key="3">3</button>
+            <button class="key-btn op-key" data-key="-">-</button>
+        </div>
+        <div class="keypad-row">
+            <button class="key-btn num-key zero-key" data-key="0">0</button>
+            <button class="key-btn num-key" data-key="00">00</button>
+            <button class="key-btn num-key" data-key=".">.</button>
+            <button class="key-btn op-key" id="confirm-key">确认</button>
+        </div>
+    </div>
+
+    <!-- 计算按钮（原有） -->
+    <button id="calculate-btn" class="calc-btn">计算</button>
+
+    <!-- 总计行（原有） -->
+    <div class="total-row">
+        <span class="total-label">总计：</span>
+        <span class="total-value" id="total-result">0</span>
+    </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

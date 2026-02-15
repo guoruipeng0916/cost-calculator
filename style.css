@@ -1,0 +1,200 @@
+/* 全局样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "微软雅黑", sans-serif;
+}
+
+/* 移动端适配：页面容器 */
+.container {
+    width: 95%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+/* 输入行样式 */
+.input-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* 标签样式 */
+.label {
+    min-width: 60px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* 公式输入框 - 禁用输入法后样式优化 */
+.formula-input {
+    flex: 1;
+    height: 45px;
+    padding: 0 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+    /* 禁用输入法核心样式 + 禁止编辑（靠按键输入） */
+    pointer-events: none; /* 禁止点击输入框唤起输入法 */
+    background-color: #fff;
+}
+
+.formula-input:focus {
+    border-color: #409eff;
+}
+
+/* 结果文本 */
+.result-text {
+    min-width: 100px;
+    font-size: 1rem;
+    color: #666;
+}
+
+/* 新增：计算器按键区域样式 */
+.calc-keypad {
+    margin: 20px 0;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.keypad-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+/* 通用按键样式 */
+.key-btn {
+    flex: 1;
+    height: 50px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 数字/括号按键 */
+.num-key {
+    background-color: #f8f8f8;
+    color: #333;
+}
+.num-key:hover {
+    background-color: #e8e8e8;
+}
+
+/* 0号按键占两列 */
+.zero-key {
+    flex: 2;
+}
+
+/* 运算符按键 */
+.op-key {
+    background-color: #409eff;
+    color: #fff;
+}
+.op-key:hover {
+    background-color: #337ecc;
+}
+
+/* 功能按键（退格、清空） */
+.func-key {
+    background-color: #f56c6c;
+    color: #fff;
+}
+.func-key:hover {
+    background-color: #e64949;
+}
+
+/* 确认按键 */
+#confirm-key {
+    background-color: #67c23a;
+    color: #fff;
+}
+#confirm-key:hover {
+    background-color: #52af29;
+}
+
+/* 计算按钮 */
+.calc-btn {
+    width: 100%;
+    height: 50px;
+    background-color: #409eff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin: 20px 0;
+    transition: background-color 0.2s;
+}
+
+.calc-btn:hover {
+    background-color: #337ecc;
+}
+
+/* 总计行 */
+.total-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    padding-top: 20px;
+    border-top: 1px dashed #ddd;
+}
+
+.total-label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-right: 15px;
+}
+
+.total-value {
+    font-size: 1.5rem;
+    color: #e6a23c;
+    font-weight: bold;
+}
+
+/* 移动端小屏幕适配 */
+@media (max-width: 400px) {
+    .input-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .label, .formula-input, .result-text {
+        width: 100%;
+    }
+
+    .result-text {
+        margin-top: 5px;
+    }
+
+    /* 手机端按键高度适配 */
+    .key-btn {
+        height: 45px;
+        font-size: 1.1rem;
+    }
+}
